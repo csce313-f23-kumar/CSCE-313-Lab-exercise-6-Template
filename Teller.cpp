@@ -21,6 +21,7 @@ void print_helper(int _approach_num, const chrono::time_point<chrono::steady_clo
 // thread function the teller will use to process a transaction
 void teller_thread(BankAccount* b, int _amount) {
     // TODO: call transaction() function for b
+    //b.transaction(_amount);
 }
 
 // thread function the teller will use to process a threadsafe transaction
@@ -77,6 +78,10 @@ int main(int argc, char* argv[]) {
     // begin timer
     const chrono::time_point<chrono::steady_clock> start2 = chrono::steady_clock::now();
     // TODO: create *num_trans* threads and push_back() each one to t_vec
+    // iterate over the transactions
+        // t_vec.push_back(thread(teller_thread, &B, trans_arr[i]))
+
+
 
     // (already complete) join threads
     for (size_t i = 0; i < t_vec.size(); ++i) {
@@ -95,6 +100,8 @@ int main(int argc, char* argv[]) {
     // begin timer
     const chrono::time_point<chrono::steady_clock> start3 = chrono::steady_clock::now();
     // TODO: create *num_trans* threads and push_back() each one to t_vec2
+    // iterate over the transactions
+        // t_vec2.push_back(thread(teller_threadsafe, &C, trans_arr[i]))
 
     // TODO: join all threads in t_vec2
 
